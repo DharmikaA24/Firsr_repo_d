@@ -1,17 +1,20 @@
 name: My first workflow
-on: push
+
+on: 
+  push:
+
 jobs:
   first_job:
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-    -name: checkout repos
-    uses: actions/checkout@v4
-    
-    -name: Welcome!
-    run: echo "My first workflow"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    -name: Files list
-    run: ls
+      - name: Welcome!
+        run: echo "My first workflow"
 
-    -name: Read Files
-    run: cat README.md
+      - name: Files list
+        run: ls
+
+      - name: Read README.md
+        run: cat README.md
