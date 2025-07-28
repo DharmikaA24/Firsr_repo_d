@@ -1,0 +1,19 @@
+name: generate ascii
+on:
+    push
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install cosway program
+              run: sudo apt-get install cosway -y
+
+            - name: Execute cosway CMD
+              run: cosway -f dragon "I'm a dragon .......RAWR">>dragon.txt
+
+            - name: Text file exists
+              run: grep -i "dragon" dragon.txt
+              
