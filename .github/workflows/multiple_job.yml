@@ -5,6 +5,8 @@ jobs:
     build_job:
         runs-on: ubuntu-latest
         steps:
+            - name: installation
+              run: sudo apt-get update
             - name: Install cosway program
               run: sudo apt-get install cosway -y
 
