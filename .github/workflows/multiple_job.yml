@@ -29,7 +29,7 @@ jobs:
           name: Dragon-text-file
 
       - name: Text file exists
-        run: grep -i "dragon" "Dragon-text-file/dragon.txt"
+        run: grep -i "dragon" "dragon.txt"
 
   deploy_job:
     needs: test_job
@@ -41,7 +41,7 @@ jobs:
           name: Dragon-text-file
 
       - name: Read files
-        run: cat "Dragon-text-file/dragon.txt"
+        run: cat dragon.txt
 
       - name: Deploying
         run: echo Deploying....
