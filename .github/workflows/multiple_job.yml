@@ -6,9 +6,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             
+            - name: Install cowsay program
+              run: |
+                    sudo apt-get update
+                    sudo apt-get install cowsay -y
 
             - name: Execute cowsay CMD
-              run: echo "I'm a dragon .......RAWR">>dragon.txt
+              run: cowsay -f dragon "I'm a dragon .......RAWR">>dragon.txt
 
             - name: sleep for 30 seconds
               run: sleep 30
